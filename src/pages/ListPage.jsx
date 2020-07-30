@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import DataTable from '../components/DataTable';
 import {useSelector, useDispatch} from 'react-redux';
 
-import * as tasksAction from '../redux/actions/fetchTasksAction';
+import * as tasksAction from '../redux/actions/tasksAction';
 
 const ListPage = () => {
 

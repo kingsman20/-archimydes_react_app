@@ -29,7 +29,6 @@ const LoginForm = () => {
       onSubmit={(values) => {
         dispatch(authAction.loginUser(values))
           .then((result) => {
-            console.log(result);
             if(result.role == "Admin") {
               history.push("/lists")
             } else if(result.role == "user"){
