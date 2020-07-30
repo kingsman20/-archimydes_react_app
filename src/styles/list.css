@@ -1,0 +1,225 @@
+header {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    display: -webkit-flex;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1001;
+    color: rgb(255, 255, 255);
+    height: 64px;
+    background-color: #065FB4;
+    -moz-box-align: center;
+    align-items: center;
+    width: 100%;
+    outline: currentcolor none medium !important;
+    padding: 0px 80px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo_text {
+    color: #fff;
+    font-weight: 900;
+    margin-right: 50px;
+}
+
+.header_link {
+    display: block;
+    display: -webkit-block;
+    min-width: 0px;
+    margin: 0px 50px;
+    font-size: 14px;
+    text-decoration: none;
+    flex-shrink: 0;
+    -moz-box-align: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+nav {
+    transition: all 0s;
+    height: auto;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    display: -webkit-flex;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: rgb(255, 255, 255);
+    height: 55px;
+    -moz-box-align: center;
+    align-items: center;
+    width: 100%;
+    outline: currentcolor none medium !important;
+}
+
+.nav_link {
+    display: flex;
+    display: -webkit-flex;
+    min-width: 0px;
+    padding: 0px 0px;
+    margin: 0px 50px;
+    font-size: 14px;
+    text-decoration: none;
+    flex-shrink: 0;
+    -moz-box-align: center;
+    align-items: center;
+    height: 100%;
+    -moz-box-align: center;
+    align-items: center;
+    color: #717375;
+}
+
+nav .active {
+    border-bottom: 3px solid #065fb4;
+    border-bottom-color: #065fb4;
+    color: #065fb4;
+}
+
+.search_input_container {
+    display: flex;
+    display: -webkit-flex;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    -moz-box-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.search_input {
+    border: none;
+    outline: none;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-align: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.icon_box {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.data_title {
+    background: transparent;
+    /* background: #c4cad1; */
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.filter_input {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 3px 20px 3px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    overflow: hidden;
+    margin-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(down-arrow.svg) 90% / 10% no-repeat #fff;
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+    color: rgb(112, 107, 107);
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+    text-align: center;
+    /* padding: 50px 0px; */
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td,
+table th {
+    padding: 30px 20px;
+    font-weight: 200;
+}
+
+table td {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+
+table tr:nth-child(even) {
+    background-color: #f0f3ff;
+}
+
+table .btn {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+table .btn_primary {
+    background-color: #2874C6;
+    color: #fff;
+}
+
+table .btn_light {
+    background-color: #bfc6cd;
+    color: rgb(95, 87, 87);
+}
+
+footer {
+    background: transparent;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    display: -webkit-flex;
+    -moz-box-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+
+@media (max-width: 767.98px) {
+    header {
+        padding: 0px 10px;
+    }
+    .nav_link {
+        margin: 0px 20px;
+    }
+}
