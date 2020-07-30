@@ -65,6 +65,10 @@
     color: #fff;
 }
 
+.btn_danger {
+    background-color: tomato;
+}
+
 @media (max-width: 767.98px) {
     .task_card_header {
         padding: 10px 20px;

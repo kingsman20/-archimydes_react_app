@@ -92,9 +92,9 @@ const CreateTask = () => {
                   </div>
                   <div className="col_50">
                     <div className="input_item">
-                      <label>Estimated time of completion</label>
+                      <label>Estimated hours of completion</label>
                       <TextFieldGroup
-                        type="text"
+                        type="number"
                         name="estimatedHrs"
                         id="estimatedHrs"
                         onChange={props.handleChange}
@@ -121,7 +121,7 @@ const CreateTask = () => {
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                       </select>
-                      {props.errors.complexity ? (
+                      {props.touched.complexity && props.errors.complexity ? (
                         <span className="text-danger">
                           {props.errors.complexity}
                         </span>
@@ -143,7 +143,7 @@ const CreateTask = () => {
                         <option value="development">Development</option>
                         <option value="qa">QA</option>
                       </select>
-                      {props.errors.type ? (
+                      {props.touched.complexity && props.errors.type ? (
                         <span className="text-danger">{props.errors.type}</span>
                       ) : null}
                     </div>
@@ -158,7 +158,7 @@ const CreateTask = () => {
                       onChange={props.handleChange}
                       className="text_area"
                     ></textarea>
-                    {props.errors.description ? (
+                    {props.touched.complexity && props.errors.description ? (
                       <span className="text-danger">
                         {props.errors.description}
                       </span>

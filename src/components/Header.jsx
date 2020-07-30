@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <header>
-      <a href="#" className="logo_text">
+      <a href="/" className="logo_text">
         LOGO
       </a>
       <div className="spacer"></div>

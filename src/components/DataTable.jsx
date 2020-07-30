@@ -5,23 +5,6 @@ import "../styles/constants.css";
 
 const DataTable = (props) => (
   <>
-    <div className="data_title container">
-      <h4 href="#" className="text_black">
-        All Tasks
-      </h4>
-      <div className="spacer"></div>
-      <div className="search_input_container">
-        <span className="icon_box">
-          <i className="fas fa-search"></i>
-        </span>
-        <input type="text" className="search_input" placeholder="search" />
-      </div>
-      <select className="filter_input">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-      </select>
-    </div>
-
     <div className="container">
       <div className="card">
         <table>

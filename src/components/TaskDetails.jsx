@@ -7,7 +7,7 @@ const TaskDetails = (props) => {
   console.log(props.task);
   return (
     <>
-      {props.task.length != 0 ? (
+      {props.task && props.task.length != 0 ? (
         <div className="container">
           <div className="task_card">
             <div className="task_card_header">
@@ -39,7 +39,7 @@ const TaskDetails = (props) => {
                 <span>{props.task.complexity}</span>
               </p> */}
               <p className="text_cente">
-                <a className="btn btn_primary">Reject</a>
+                <a className="btn btn_danger">Reject</a>
                 &nbsp;&nbsp;&nbsp;<a className="btn btn_primary">Accept</a>
               </p>
             </div>
