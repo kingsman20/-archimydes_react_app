@@ -5,10 +5,9 @@ export const CREATE_TASK_FAIL = "CREATE_TASK_FAIL";
 
 const BASE_URL = "http://localhost:3000/api/v1";
 
-export const fetchTasks = () => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZmlyc3ROYW1lIjoiR3JpZmZpbiIsImxhc3ROYW1lIjoiUmVldmVzIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNTk2MDg4MjA5fQ.FnYrz9uAZE-afRu_Z29RkwnYqpvM4lwq7N9oVMyzIUE";
 
+export const fetchTasks = () => {
+  const token = localStorage.getItem('token')
   return async (dispatch) => {
     // logic to fetch data
     const result = await fetch(`${BASE_URL}/stories`, {
@@ -19,7 +18,7 @@ export const fetchTasks = () => {
 
     const resultData = await result.json();
 
-    if (!resultData || resultData == "Unauthorized") {
+    if (!resultData || resultData == "unauthorized") {
       dispatch({
         type: FETCH_TASK_FAIL,
       });
@@ -36,14 +35,12 @@ export const createTask = ({
   summary,
   type,
   complexity,
-  estimated,
+  estimatedHrs,
   cost,
   description,
 }) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZmlyc3ROYW1lIjoiR3JpZmZpbiIsImxhc3ROYW1lIjoiUmVldmVzIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNTk2MDg4MjA5fQ.FnYrz9uAZE-afRu_Z29RkwnYqpvM4lwq7N9oVMyzIUE";
-
   return async (dispatch) => {
+    const token = localStorage.getItem('token')
     const response = await fetch(`${BASE_URL}/stories`, {
       method: "POST",
       headers: {
@@ -54,7 +51,7 @@ export const createTask = ({
         summary,
         type,
         complexity,
-        estimated,
+        estimatedHrs,
         cost,
         description,
       }),
@@ -63,7 +60,7 @@ export const createTask = ({
     const responseData = await response.json();
     console.log(responseData)
 
-    if (!responseData || responseData == "Unauthorized") {
+    if (!responseData || responseData == "unauthorized") {
       dispatch({
         type: CREATE_TASK_FAIL,
       });

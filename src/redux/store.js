@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 import authReducer from './reducers/authReducer';
-import fetchTaskReducer from './reducers/tasksReducer'
 import fetchTasksReducer from './reducers/tasksReducer';
 
 const rootReducer = combineReducers({

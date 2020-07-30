@@ -40,14 +40,18 @@ const DataTable = (props) => (
                 <tr key={index}>
                   <td>{task.id}</td>
                   <td>
-                    <Link
-                      to={{
-                        pathname: "/details",
-                        taskId: task.id,
-                      }}
-                    >
-                      {task.summary}
-                    </Link>
+                    {props.role && props.role == "Admin" ? (
+                      <Link
+                        to={{
+                          pathname: "/details",
+                          taskId: task.id,
+                        }}
+                      >
+                        {task.summary}
+                      </Link>
+                    ) : (
+                      task.summary
+                    )}
                   </td>
                   <td>{task.type}</td>
                   <td>{task.complexity}</td>

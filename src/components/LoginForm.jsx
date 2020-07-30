@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import TextFieldGroup from "./common/TextFieldGroup";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
@@ -18,6 +18,17 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   let history = useHistory();
 
+  const checkTokenExist = () => {
+    const token = localStorage.getItem('token');
+    if(token) {
+      history.push('/lists')
+    }
+  }
+
+  useEffect(() => {
+    checkTokenExist()
+  });
+
   return (
     <Formik
       initialValues={{
@@ -29,6 +40,8 @@ const LoginForm = () => {
       onSubmit={(values) => {
         dispatch(authAction.loginUser(values))
           .then((result) => {
+            console.log(result)
+            localStorage.setItem('token', result.token)
             if(result.role == "Admin") {
               history.push("/lists")
             } else if(result.role == "user"){
@@ -52,7 +65,7 @@ const LoginForm = () => {
               value={props.values.email}
               onBlur={props.handleBlur}
               className="text_input"
-              error={props.errors.email ? props.errors.email : null}
+              error={props.touched.email && props.errors.email ? props.errors.email : null}
             />
           </div>
           <div className="input_item">
@@ -65,7 +78,7 @@ const LoginForm = () => {
               value={props.values.password}
               onBlur={props.handleBlur}
               className="text_input"
-              error={props.errors.password ? props.errors.password : null}
+              error={props.touched.password && props.errors.password ? props.errors.password : null}
             />
           </div>
           <div className="input_item">

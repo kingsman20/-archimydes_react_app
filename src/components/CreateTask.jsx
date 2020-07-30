@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import TextFieldGroup from "./common/TextFieldGroup";
 import { Formik } from "formik";
@@ -19,7 +19,7 @@ const formSchema = yup.object({
   description: yup.string().required().min(10),
   type: yup.string().required(),
   complexity: yup.string().required(),
-  estimated: yup.string().required(),
+  estimatedHrs: yup.number().required(),
   cost: yup.number().required(),
 });
 
@@ -34,8 +34,8 @@ const CreateTask = () => {
         description: "",
         type: "",
         complexity: "",
-        estimated: "",
-        cost: "",
+        estimatedHrs: 0,
+        cost: 0,
       }}
       validationSchema={formSchema}
       onSubmit={(values) => {
@@ -95,14 +95,14 @@ const CreateTask = () => {
                       <label>Estimated time of completion</label>
                       <TextFieldGroup
                         type="text"
-                        name="estimated"
-                        id="estimated"
+                        name="estimatedHrs"
+                        id="estimatedHrs"
                         onChange={props.handleChange}
                         value={props.values.estimated}
                         onBlur={props.handleBlur}
                         className="text_input"
                         error={
-                          props.errors.estimated ? props.errors.estimated : null
+                          props.errors.estimatedHrs ? props.errors.estimatedHrs : null
                         }
                       />
                     </div>
